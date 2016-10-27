@@ -8,8 +8,7 @@ BUNDLE_DIR=/tmp/bundle-dir
 cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 
-npm i --unsafe-perm
-meteor build --directory $BUNDLE_DIR --server=http://localhost:3000 --unsafe-perm
+meteor build --directory $BUNDLE_DIR --server=http://localhost:3000 --unsafe-perm --server-only
 
 cd $BUNDLE_DIR/bundle/programs/server/
 npm i --unsafe-perm
