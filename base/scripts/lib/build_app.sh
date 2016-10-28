@@ -8,10 +8,10 @@ BUNDLE_DIR=/tmp/bundle-dir
 cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 
-meteor build --directory $BUNDLE_DIR --server=http://localhost:3000 --unsafe-perm --server-only
 
-cd $BUNDLE_DIR/bundle/programs/server/
-npm i --unsafe-perm
+# npm i so all resources are available for the bundling
+meteor npm install --unsafe-perm
+meteor build --directory $BUNDLE_DIR --server=http://localhost:3000 --unsafe-perm --server-only
 
 mv $BUNDLE_DIR/bundle /built_app
 
@@ -20,3 +20,8 @@ rm -rf $COPIED_APP_PATH
 rm -rf $BUNDLE_DIR
 rm -rf ~/.meteor
 rm /usr/local/bin/meteor
+
+
+# npm i on built app
+cd /built_app
+npm i --unsafe-perm
