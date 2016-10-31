@@ -18,6 +18,7 @@ mv $BUNDLE_DIR/bundle /built_app
 
 # cleanup
 echo "=> cleanup"
+rm -rf /app
 rm -rf $COPIED_APP_PATH
 rm -rf $BUNDLE_DIR
 rm -rf ~/.meteor
