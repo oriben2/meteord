@@ -1,8 +1,14 @@
 ## Borrowed from: https://github.com/chriswessels/meteor-tupperware
 
+apt-get purge build-essential
+
 set -e
 # Autoremove any junk
 apt-get autoremove -y
+
+# remove meteor
+rm /usr/local/bin/meteor
+rm -rf ~/.meteor
 
 # Clean out docs
 rm -rf /usr/share/doc /usr/share/doc-base /usr/share/man /usr/share/locale /usr/share/zoneinfo
